@@ -27,7 +27,8 @@ bit | button name
 SAVE FILE: command=0xc000
 offset  | size   | note
 --------+--------+-----------------------------------------
-0x0     |        | data (command size)
+0x0     | 1      | fileId, u8 (range: 0..=4)
+0x1		| 1	(+2) | reloadCurrent, bool
 
 CHANGE STAGE: command=0xc001
 offset  | size   | note
@@ -61,8 +62,12 @@ offset  | size   | note
 PLAYBACK SPEED: command=0xc005
 offset  | size   | note
 --------+--------+-----------------------------------------
-0x0     | 1 (+3) | frame division, u8
+0x0     | 1 (+3) | frame division, u8 (range: 1..=10)
 
 PAUSE: command=0xc006
 
+DEMO: command=0xc007
+offset  | size   | note
+--------+--------+-----------------------------------------
+0x0     | 1 (+3) | isDemo, bool
 
