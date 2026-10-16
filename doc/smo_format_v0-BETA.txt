@@ -74,6 +74,7 @@ offset  | size   | note
 SECTION: command= 0xc008
 offset  | size   | note
 --------+--------+-----------------------------------------
-0x0     | 2      | TASer name length (= n)
-0x2		| n      | TASer name
+0x0     | 1      | player (0 = Mario, 1 = Cappy)
+0x1     | 2      | TASer name length (= n)
+0x3		| n      | TASer name
 %0x4 (end, pad with 0-bytes if necessary)
